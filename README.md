@@ -31,8 +31,8 @@ No se requieren librerías ni dependencias externas. Solo necesitas un entorno B
 
 Clonar el repositorio:
 
-git clone <URL_DE_TU_REPOSITORIO>
-cd <NOMBRE_DE_LA_CARPETA>
+git clone (https://github.com/nazariegosantomeluis-droid/primeros_pasos_con_git/tree/feature/archivos-prueba)
+cd casos_de_prueba
 
 
 Dar permisos de ejecución al script principal:
