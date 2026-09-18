@@ -1,12 +1,11 @@
+#!/bin/bash
+# busqueda.sh -> busca la palabra de forma recursiva en la trayectoria
+
 ejecutar_busqueda() {
-    coincidencias=()
-    for i in {1..8}; do
-        archivo="$CARPETA/archivo$i.txt"
-        # Verifica que exista y busca la palabra sin distinguir mayusculas/minusculas
-        if [ -f "$archivo" ]; then
-            if grep -qi "$PALABRA" "$archivo"; then
-                coincidencias+=("$archivo")
-            fi
-        fi
-    done
+  coincidencias=()
+  # -r recursivo | -l solo nombres | -i ignora may/min | -I omite binarios
+  # 2>/dev/null silencia errores de permisos al recorrer todo el sistema
+  while IFS= read -r archivo; do
+    coincidencias+=("$archivo")
+  done < <(grep -rliI "$PALABRA" "$CARPETA" 2>/dev/null)
 }
